@@ -1,0 +1,30 @@
+From 00b264e771592caabeaf6f8a18df9753ea3e5a07 Mon Sep 17 00:00:00 2001
+From: krupal <krupalshah@users.noreply.github.com>
+Date: Wed, 18 Oct 2017 10:29:35 +0530
+Subject: [PATCH] Extend AppCompatImageView instead of ImageView
+
+Extend PhotoView with AppCompatImageView instead of ImageView, as AppCompatImageView provides some benefits like support for vector drawables.
+---
+ .../src/main/java/com/github/chrisbanes/photoview/PhotoView.java      | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/photoview/src/main/java/com/github/chrisbanes/photoview/PhotoView.java b/photoview/src/main/java/com/github/chrisbanes/photoview/PhotoView.java
+index 7ab4ffe..c00a22b 100644
+--- a/photoview/src/main/java/com/github/chrisbanes/photoview/PhotoView.java
++++ b/photoview/src/main/java/com/github/chrisbanes/photoview/PhotoView.java
+@@ -23,13 +23,13 @@
+ import android.net.Uri;
+ import android.util.AttributeSet;
+ import android.view.GestureDetector;
+-import android.widget.ImageView;
++import android.support.v7.widget.AppCompatImageView;
+ 
+ /**
+  * A zoomable {@link ImageView}. See {@link PhotoViewAttacher} for most of the details on how the zooming
+  * is accomplished
+  */
+-public class PhotoView extends ImageView {
++public class PhotoView extends AppCompatImageView {
+ 
+     private PhotoViewAttacher attacher;
+     private ScaleType pendingScaleType;

@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion rootProject.ext.sdkVersion
-    buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
         applicationId "uk.co.senab.photoview.sample"
@@ -17,9 +16,12 @@ android {
 }
 
 dependencies {
-    compile "com.android.support:appcompat-v7:$supportLibVersion"
-    compile "com.android.support:design:$supportLibVersion"
-    compile "com.android.support:recyclerview-v7:$supportLibVersion"
-    compile 'com.squareup.picasso:picasso:2.5.2'
-    compile project(':photoview')
+    implementation "androidx.appcompat:appcompat:1.0.0"
+    implementation "androidx.recyclerview:recyclerview:1.0.0"
+
+    implementation "com.google.android.material:material:1.0.0"
+
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+
+    implementation project(':photoview')
 }
